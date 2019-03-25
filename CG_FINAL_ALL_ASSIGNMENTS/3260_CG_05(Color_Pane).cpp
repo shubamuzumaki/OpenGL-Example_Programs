@@ -171,7 +171,7 @@ void InitCallBacks()
 	glutMotionFunc(MouseMotionFunc);
 	//glutReshapeFunc(ReshapeFunc);
 }
-//this Function is used to DiaplatText
+//this Function is used to DiaplayText
 void DisplayText(string text, int x, int y, int font,unsigned char* color=NULL)
 {
 	void *p = NULL;
