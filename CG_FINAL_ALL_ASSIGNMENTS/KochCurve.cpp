@@ -8,6 +8,40 @@ using namespace std;
 int width = 500;
 int height = 500;
 
+void Delay(int x)
+{
+	while(--x)
+	{
+		cout << ".";
+	}
+}
+
+void DDALine(double x1, double y1, double x2, double y2)
+{
+	double dx = x2 - x1;
+	double dy = y2 - y1;
+
+	int step = abs(dx) > abs(dy) ? abs(dx) : abs(dy);//max of abs(dx),abs(dy)
+	double xinc = dx / step;
+	double yinc = dy / step;
+
+	double x = x1;
+	double y = y1;
+
+	while (step--)
+	{
+	glBegin(GL_POINTS);
+		glVertex2d(x, y);
+	glEnd();
+	glFlush();
+	Delay(200);
+		x += xinc;
+		y += yinc;
+	}
+}
+
+
+
 void _khelper(double x1, double y1, double x2, double y2, int itr)
 {
 
@@ -20,7 +54,7 @@ void _khelper(double x1, double y1, double x2, double y2, int itr)
 	float p2y = (y1 + 2 * y2) / 3;
 
 	//find the top point _/\_	//explanation is at the end for this equation
-	double rad = (M_PI / (double)180) * 60;
+	double rad = (M_PI / (double)180) * -60;
 	double y = -p2x * sin(rad) + p2y * cos(rad) + p1x * sin(rad) - p1y * cos(rad) + p1y;
 	double x = p2x * cos(rad) + p2y * sin(rad) - p1x * cos(rad) - p1y * sin(rad) + p1x;
 
@@ -31,6 +65,13 @@ void _khelper(double x1, double y1, double x2, double y2, int itr)
 		glVertex2f(x, y);        //  _/                                   ;
 		glVertex2f(p2x, p2y);	 //  _/\ 
 		glVertex2f(x2, y2);      // _/\_ 
+
+		//for visual purposes
+		//DDALine(x1, y1, p1x, p1y);	// _
+		//DDALine(p1x, p1y, x, y);	//  /
+		//DDALine(x, y, p2x, p2y);	//   \ 
+		//DDALine(p2x, p2y, x2, y2);  //    _
+
 	}
 	else//go deeper
 	{
@@ -73,7 +114,7 @@ int main(int argc, char **argv)
 	glutDisplayFunc(Disp);
 
 	//starting point and end point of line & no. of itr
-	KochCurve(10, 250, 480, 250, 3);
+	KochCurve(10, 250, 480, 250, 13);
 	glFlush();	//don't miss it
 
 
