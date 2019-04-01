@@ -1,3 +1,5 @@
+//this is just a temp file
+
 #include "pch.h"
 #include<GL/glut.h>
 #include<iostream>
@@ -121,11 +123,12 @@ void _sfill_4C(double x, double y, Color fillColor, Color bgColor)
 		glBegin(GL_POINTS);
 		glVertex2d(x, y);
 		glEnd();
+		cout << "::::" << x << "," << y;
 		//if(x==)
 		glFlush();// this line is for visual purposes only 
 
 		//4 Connected Approach
-		_sfill_4C(x - 1, y, fillColor, bgColor);
+		_sfill_4C(x - 1, y, fillColor, bgColor); 
 		_sfill_4C(x + 1, y, fillColor, bgColor);
 		_sfill_4C(x, y - 1, fillColor, bgColor);
 		_sfill_4C(x, y + 1, fillColor, bgColor);
@@ -180,8 +183,8 @@ int main(int argc, char**argv)
 	glutDisplayFunc(DisplayFunc);
 
 	Color fillColor(0, 255, 0);
-	DrawRectangle(250, 250, 200, 200);
-	SeedFill(250, 250, fillColor);
+	DrawRectangle(103, 103, 90, 93);
+	SeedFill(103, 103, fillColor);
 
 	glFlush();
 	glutMainLoop();

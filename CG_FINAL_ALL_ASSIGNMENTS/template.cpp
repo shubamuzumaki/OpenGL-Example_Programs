@@ -12,6 +12,8 @@ int width = 800;
 int height = 600;
 
 void Clear();
+//essentials
+void MouseFunc(int button, int state, int x, int y);
 
 //essentials
 struct Vector2
@@ -34,7 +36,10 @@ vector<Vector2> point;
 
 
 //CallBacks Functions
-void Display() {}
+void Display()
+{
+	cout << "lol";
+}
 void ReshapeFunc(int w, int h)
 {
 	if (width == w && height == h) return;
@@ -43,6 +48,7 @@ void ReshapeFunc(int w, int h)
 //keyoard func
 void Keyboard(unsigned char key, int, int)
 {
+	MouseFunc(0,0,0,0);
 	switch (key)
 	{
 	case 27:
@@ -52,15 +58,17 @@ void Keyboard(unsigned char key, int, int)
 		Clear();
 		break;
 	}
+
 }
 //mouse func
 void MouseFunc(int button, int state, int x, int y)
 {
+	cout << "hello";
 	if (state == GLUT_UP)  return;
 
 	y = -y + height;
 
-	if (point.size() % 2 == 0)
+	if (point.size()  == 0)
 	{
 		point.push_back(tempPoint(x, y));
 	}
@@ -78,7 +86,10 @@ void MouseFunc(int button, int state, int x, int y)
 	}
 }
 
-void MouseMotionFunc(int, int) {}
+void MouseMotionFunc(int x, int y)
+{
+	cout << x << "," << y<<endl;
+}
 
 //clear the screen
 void Clear()

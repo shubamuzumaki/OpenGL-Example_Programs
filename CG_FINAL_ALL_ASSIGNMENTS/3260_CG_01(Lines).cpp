@@ -29,7 +29,11 @@ vector<Vector2*> linePoint;
 
 
 //CallBacks Functions
-void Display() {}
+void Display()
+{
+	//DDALine(0, 0, 50, 50);
+	//glFlush();
+}
 void ReshapeFunc(int w, int h)
 {
 	if (width == w && height == h) return;
@@ -128,15 +132,11 @@ void InitCallBacks()
 //this Function is used to DiaplatText
 void DisplayText(string text,int x,int y,int font)
 {
-	void *p = NULL;
-	if (font < 8 && font>1)	p = ((void *)font);
-	else				    p = ((void *)5);
-
 	glColor3f(1,1,0);
 	glRasterPos2f(x, y);
 	size_t len = text.length();
 	for (int i = 0; i < len; i++)
-		glutBitmapCharacter(p, (int)text[i]);
+		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_10, (int)text[i]);
 
 	glColor3f(1, 0, 0);
 }
@@ -244,8 +244,8 @@ int main(int argc, char **argv)
 	glutInit(&argc, argv);
 
 	Initialize();
+	
 	InitCallBacks();
-
 	Help();
 	glutMainLoop();
 	return 0;

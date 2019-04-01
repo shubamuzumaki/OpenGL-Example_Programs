@@ -135,7 +135,7 @@ void MouseMotionFunc(int x, int y)
 //clear the screen
 void Clear()
 {
-	glClearColor(0.5, 0.5, 0.5, 1);
+	glClearColor(1, 1, 1, 1);
 	glClear(GL_COLOR_BUFFER_BIT);
 	
 	DrawColorPane();
