@@ -41,7 +41,6 @@ vector<Vector2> point;
 //CallBacks Functions
 void Display()
 {
-	cout << "lol";
 }
 void ReshapeFunc(int w, int h)
 {
@@ -66,7 +65,6 @@ void Keyboard(unsigned char key, int, int)
 //mouse func
 void MouseFunc(int button, int state, int x, int y)
 {
-	cout << "hello";
 	if (state == GLUT_UP)  return;
 
 	y = -y + height;
@@ -81,8 +79,8 @@ void MouseFunc(int button, int state, int x, int y)
 		if (button == GLUT_LEFT_BUTTON)
 		{
 			int s = point.size();
-			//KochCurve(point[s-2].x,point[s-2].y,point[s-1].x,point[s-1].y,4,60);
-			KochCurve(point[s-2].x,point[s-2].y,point[s-1].x,point[s-1].y,4,-60);
+			KochCurve(point[s-2].x,point[s-2].y,point[s-1].x,point[s-1].y,3,60);
+			//KochCurve(point[s-2].x,point[s-2].y,point[s-1].x,point[s-1].y,10,-60);
 			glFlush();
 		}
 		else if (button == GLUT_RIGHT_BUTTON)
@@ -94,13 +92,12 @@ void MouseFunc(int button, int state, int x, int y)
 
 void MouseMotionFunc(int x, int y)
 {
-	cout << x << "," << y << endl;
 }
 
 //clear the screen
 void Clear()
 {
-	glClearColor(0.5, 0.5, 0.5, 1);
+	glClearColor(0, 0, 0, 1);
 	glClear(GL_COLOR_BUFFER_BIT);
 	point.clear();
 	glFlush();
@@ -167,10 +164,15 @@ void _khelper(double x1, double y1, double x2, double y2, int itr,int angle)
 
 	if (itr - 1 == 0)//draw pattern
 	{
+		glColor3f(1,0,0);
 		glVertex2f(x1, y1);		 //  
+		glColor3f(1, 1, 0);
 		glVertex2f(p1x, p1y);	 //  _ 
+		glColor3f(1, 0, 1);
 		glVertex2f(x, y);        //  _/                                   ;
+		glColor3f(0, 0, 1);
 		glVertex2f(p2x, p2y);	 //  _/\ 
+		glColor3f(0, 1, 1);
 		glVertex2f(x2, y2);      // _/\_ 
 
 		//for visual purposes
@@ -186,6 +188,7 @@ void _khelper(double x1, double y1, double x2, double y2, int itr,int angle)
 		_khelper(p1x, p1y, x, y, itr - 1,angle);	//  /
 		_khelper(x, y, p2x, p2y, itr - 1,angle);	//   \ 
 		_khelper(p2x, p2y, x2, y2, itr - 1,angle);  //    _
+
 	}
 }
 
@@ -223,3 +226,13 @@ int main(int argc, char **argv)
 	glutMainLoop();
 	return 0;
 }
+
+
+
+
+//EXPLANATION:
+//we need to rotate p2 w.r.t p1 at an angle 60(counterclockwise)
+//we first translate p1 to origin
+//perform rotation
+//perform inverse translation on point p1
+//multiply matrices to get that equation

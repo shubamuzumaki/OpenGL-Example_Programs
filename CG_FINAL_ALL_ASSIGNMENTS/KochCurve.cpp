@@ -55,8 +55,8 @@ void _khelper(double x1, double y1, double x2, double y2, int itr)
 
 	//find the top point _/\_	//explanation is at the end for this equation
 	double rad = (M_PI / (double)180) * -60;
+	double x =  p2x * cos(rad) + p2y * sin(rad) - p1x * cos(rad) - p1y * sin(rad) + p1x;
 	double y = -p2x * sin(rad) + p2y * cos(rad) + p1x * sin(rad) - p1y * cos(rad) + p1y;
-	double x = p2x * cos(rad) + p2y * sin(rad) - p1x * cos(rad) - p1y * sin(rad) + p1x;
 
 	if (itr - 1 == 0)//draw pattern
 	{

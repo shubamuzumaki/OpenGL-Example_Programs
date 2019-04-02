@@ -15,6 +15,7 @@ int height = 600;
 void BresenhamCircle(double h, double k, double r);
 void MidCircle(double h, double k, double r);
 void DisplayText(string text, int x, int y, int font);
+void DDACircle(double h, double k, double r);
 void Clear();
 
 //essentials
@@ -89,8 +90,9 @@ void MouseFunc(int button, int state, int x, int y)
 
 		if (button == GLUT_LEFT_BUTTON)
 		{
-			MidCircle(point[0]->x,point[0]->y,r);
-			DisplayText("MID_CIRCLE", point[0]->x, point[0]->y-r-25 + 10, 6);
+			//MidCircle(point[0]->x,point[0]->y,r);
+			DDACircle(point[0]->x,point[0]->y,r);
+			DisplayText("DDA_CIRCLE", point[0]->x, point[0]->y-r-25 + 10, 6);
 
 		}
 		else if (button == GLUT_RIGHT_BUTTON)
@@ -156,6 +158,25 @@ void DisplayText(string text, int x, int y, int font)
 //====================================================================//
 //                              PROGRAM                               //
 //====================================================================//
+
+void DDACircle(double h,double k,double r)
+{
+	double x = r;
+	double y = 0;
+
+	double eps = 1 / (double)pow(2, log2(r));
+	
+	glBegin(GL_POINTS);
+	while (y<eps || (r-x)>eps)
+	{
+		glVertex2d(x+h,y+k);
+
+		x += y * eps;
+		y -= x * eps;
+	}
+	glEnd();
+
+}
 
 
 void MidCircle(double h, double k, double r)
