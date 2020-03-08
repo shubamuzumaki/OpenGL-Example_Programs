@@ -56,8 +56,14 @@ Make Sure that Visual-Studio is set up for Open-GL projects. if not watch <a hre
 
 :five: <kbd>shift + alt + a </kbd> to add existing file in the project. open the current project directory and select the `---.cpp` file you want to run.
 
+watch this :point_down: if you feel lost
+
+![tutorial](https://user-images.githubusercontent.com/44112210/76170165-5e6e3380-61a5-11ea-81a4-f9a0dee86c57.gif)
+
 ## Line Drawing Algos
-  
+
+In this program we code basic line drawing algorithms used in graphics.
+
 > DDA(Digital Differential Analyzer)
 >
 > Bresenham
@@ -76,7 +82,11 @@ Bresenham's line algorithm is a line drawing algorithm that determines the point
 
 ### Demo
 
+![line](https://user-images.githubusercontent.com/44112210/76170414-b73ecb80-61a7-11ea-843c-4f3bf7d91213.gif)
+
 ## Circle Drawing Algos
+
+In this program we code various circle drawing algorithms used in graphics.
 
 > <a href="https://www.youtube.com/watch?v=q2LF8hH-dKM">DDA</a>
 
@@ -86,5 +96,29 @@ Bresenham's line algorithm is a line drawing algorithm that determines the point
 
 ### Demo
 
+![circle](https://user-images.githubusercontent.com/44112210/76170408-b27a1780-61a7-11ea-970b-0a72c5edfaed.gif)
 
+### Color Pane
 
+In this program basic color selection pane which can be used to color different polygons in different colors.
+
+![colorpane](https://user-images.githubusercontent.com/44112210/76170411-b5750800-61a7-11ea-8a92-2ccd75800a4a.gif)
+
+### Patterns
+
+In this program we code different patterns by using line and circle drawing algorithms used above.
+
+![pattern](https://user-images.githubusercontent.com/44112210/76170415-b7d76200-61a7-11ea-8739-a6cc94d7e59e.gif)
+![pattern2](https://user-images.githubusercontent.com/44112210/76170416-b86ff880-61a7-11ea-880e-294005205a93.gif)
+
+### Line Clipping
+
+This is cohen sutherland line clipping algorithm. In this we clip line from cliiping window
+
+![clip](https://user-images.githubusercontent.com/44112210/76170410-b443db00-61a7-11ea-984d-0f6b1769f4e9.gif)
+
+### Koch Curve
+
+Easy to just demonstrate rather than explaining
+
+![koch](https://user-images.githubusercontent.com/44112210/76170413-b6a63500-61a7-11ea-86a7-c8e31a2f84b0.gif)
