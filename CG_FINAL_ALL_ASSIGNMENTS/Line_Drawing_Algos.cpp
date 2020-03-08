@@ -48,6 +48,7 @@ void Keyboard(unsigned char key, int, int)
 		break;
 	case 'd':
 		Clear();
+		glFlush();
 		break;
 	}
 }

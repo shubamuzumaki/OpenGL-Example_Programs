@@ -29,7 +29,7 @@
     <ClCompile Include="pch.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="KochCurve(MOUSE).cpp">
+    <ClCompile Include="Line_Drawing_Algos.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
