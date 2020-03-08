@@ -178,9 +178,10 @@ int main(int argc, char**argv)
 
 	//register Display
 	glutDisplayFunc(DisplayFunc);
-
+	int x;
+	cin >> x;
 	Color fillColor(0, 255, 0);
-	DrawRectangle(250, 250, 200, 200);
+	DrawRectangle(250, 250, 50, 50);
 	SeedFill(250, 250, fillColor);
 
 	glFlush();

@@ -1,6 +1,4 @@
-//This is a template Program For All(most) CG Programs
-
-#include "pch.h"//remove this
+#include "pch.h"
 #include<GL/glut.h>
 #include<iostream>
 #include<sstream>
@@ -36,7 +34,7 @@ vector<Vector2*> point;
 
 
 //CallBacks Functions
-void Display() {}
+void Display() { glFlush(); }
 void ReshapeFunc(int w, int h)
 {
 	if (width == w && height == h) return;
