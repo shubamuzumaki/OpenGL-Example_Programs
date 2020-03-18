@@ -20,6 +20,8 @@ This repo contains various small graphics program made in `c++` using `OpenGL` t
 
 :eight: Sedd Filling
 
+:nine: Hilbert Curve
+
 ## How to Run :runner:
 
 ### Linux
@@ -122,3 +124,9 @@ This is cohen sutherland line clipping algorithm. In this we clip line from clii
 Easy to just demonstrate rather than explaining
 
 ![koch](https://user-images.githubusercontent.com/44112210/76170413-b6a63500-61a7-11ea-86a7-c8e31a2f84b0.gif)
+
+### Hilbert Curve
+
+A Hilbert curve is a continuous fractal space-filling curve first described by the German mathematician David Hilbert in 1891, as a variant of the space-filling Peano curves discovered by Giuseppe Peano in 1890
+
+![hilbert](https://user-images.githubusercontent.com/44112210/76926873-72333b80-6903-11ea-927d-94dd2cdd532f.gif)
